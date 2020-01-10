@@ -76,17 +76,18 @@ request.on('error', (e) => {
 })
 */
 
-//[] Parse the data
+//[*] Parse the data
 let request = https.request(options, (response) => {
     let body = ''
     response.on('data', (data) => {
         body = body + data
     })
     response.on('end', () => {
-        console.log(body)
+        //Convert String to JSON\
+        let profile = JSON.parse(body)
+        console.log(profile.avatar_url)
     })
-    //TODO : Parse the data
-    //Convert String to JSON
+
 })
 
 request.end()
