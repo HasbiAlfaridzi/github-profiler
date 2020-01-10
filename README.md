@@ -6,7 +6,9 @@ Solution : Use NodeJS to Connect to Github API to
 
 ## TODO
 
-* [] Connect to Github API
-* [] Read the data
+* [*] Connect to Github API
+* [*] Read the data
 * [] Parse the data
 * [] Print the data out
+
+

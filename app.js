@@ -31,6 +31,8 @@
 
 //=========================================================
 
+
+//[*] Connect to Github API
 let https = require('https')
 
 const options = {
@@ -43,9 +45,9 @@ const options = {
     }
 }
 
-
-let request = https.request(options, (result) => {
-    console.log('Got response:', result.statusCode)
+/*
+let request = https.request(options, (response) => {
+    console.log('Got response:', response.statusCode)
 })
 
 request.end()
@@ -53,4 +55,42 @@ request.end()
 request.on('error', (e) => {
     console.error(e)
 })
+*/
 
+//[*] Read the data
+/*
+let request = https.request(options, (response) => {
+    let body = ''
+    response.on('data', (data) => {
+        body = body + data
+    })
+    response.on('end', () => {
+        console.log(body)
+    })
+})
+
+request.end()
+
+request.on('error', (e) => {
+    console.error(e)
+})
+*/
+
+//[] Parse the data
+let request = https.request(options, (response) => {
+    let body = ''
+    response.on('data', (data) => {
+        body = body + data
+    })
+    response.on('end', () => {
+        console.log(body)
+    })
+    //TODO : Parse the data
+    //Convert String to JSON
+})
+
+request.end()
+
+request.on('error', (e) => {
+    console.error(e)
+})
