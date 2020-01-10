@@ -1,5 +1,9 @@
 let profile = require('./profile')
 
-profile.get('HasbiAlfaridzi')
-profile.get('yofri')
-profile.get('ronishak')
+// let profiles = ['rizafahmi', 'yofri', 'ronishak']
+// profiles.map(user => {
+//     return profile.get(user)
+// })
+
+let profiles = process.argv.slice(2)
+profiles.map(profile.get)
