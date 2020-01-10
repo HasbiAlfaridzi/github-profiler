@@ -38,7 +38,7 @@ let https = require('https')
 const options = {
     hostname: 'api.github.com',
     port: 443,
-    path: '/users/yofri',
+    path: '/users/HasbiAlfaridzi',
     method: 'GET',
     headers: {
         'user-agent': 'nodejs'
@@ -77,6 +77,7 @@ request.on('error', (e) => {
 */
 
 //[*] Parse the data
+/*
 let request = https.request(options, (response) => {
     let body = ''
     response.on('data', (data) => {
@@ -86,6 +87,28 @@ let request = https.request(options, (response) => {
         //Convert String to JSON\
         let profile = JSON.parse(body)
         console.log(profile.avatar_url)
+    })
+
+})
+
+request.end()
+
+request.on('error', (e) => {
+    console.error(e)
+})
+*/
+
+//[*] Print the data
+let request = https.request(options, (response) => {
+    let body = ''
+    response.on('data', (data) => {
+        body = body + data
+    })
+    response.on('end', () => {
+        //Convert String to JSON\
+        let profile = JSON.parse(body)
+        // console.log(profile.login + ' own ' + profile.public_repos + ' repo(s) ')
+        console.log(`${profile.login} owns ${profile.public_repos} repo(s) and has ${profile.followers} followers`)
     })
 
 })

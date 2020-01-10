@@ -9,6 +9,6 @@ Solution : Use NodeJS to Connect to Github API to
 * [*] Connect to Github API
 * [*] Read the data
 * [*] Parse the data
-* [] Print the data out
+* [*] Print the data out
 
 
